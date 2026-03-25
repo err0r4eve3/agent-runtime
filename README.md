@@ -25,7 +25,7 @@ What is intentionally not included:
 Notes:
 
 - The copied config and metadata files preserve their original absolute local paths where useful.
-- Codex top-level skill entrypoints are partly symlink-based on this machine; the real directories are copied under `codex/skills/local/` and the symlink map lives in `codex/skills/local-symlinks.json`.
+- Codex top-level skill entrypoints are partly symlink-based on this machine; most real directories are copied under `codex/skills/local/`, while the machine-local gstack runtime shell is represented through `codex/skills/local-symlinks.json`.
 - Cursor does not currently have a standalone `mcp.json` or a separate global rules tree on this machine, so those folders only contain explanatory README files.
 - `opencli` is tracked under `shared/plugins/opencli/` because it is a cross-runtime local tool with both a local skill wrapper and a browser bridge extension.
 

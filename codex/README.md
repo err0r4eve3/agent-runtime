@@ -11,7 +11,7 @@ Source snapshot:
 
 Current snapshot summary:
 
-- `9` real local Codex skill directories
+- `8` copied local Codex skill directories
 - `27` symlinked top-level Codex skill entrypoints
 - `765` files in the imported Codex vendor skills repository snapshot
 - `1` local Codex rules file
@@ -19,7 +19,7 @@ Current snapshot summary:
 
 Current local skills of note:
 
-- `gstack`
+- `gstack` (represented via symlink inventory, not copied verbatim)
 - `design-md`
 - `karpathy-autoresearch`
 - Cursor migration/authoring helpers (`cursor-create-*`, `cursor-update-settings`, `cursor-migrate-to-codex`)
