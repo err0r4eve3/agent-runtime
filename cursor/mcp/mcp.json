@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "Playwright": {
+      "command": "npx -y @playwright/mcp@latest",
+      "env": {},
+      "args": []
+    },
+    "ghidra": {
+      "command": "C:/Users/daniel/vscode/.venv/Scripts/python.exe",
+      "args": [
+          "C:/Users/daniel/vscode/bridge_mcp_ghidra.py"
+        ]
+    }
+  }
+}
