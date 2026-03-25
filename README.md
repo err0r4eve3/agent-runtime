@@ -23,3 +23,31 @@ Notes:
 - The copied config files preserve their original absolute local paths.
 - Both Codex and Cursor currently reference the local Ghidra bridge script, which is also copied into `shared/mcp/`.
 - Codex can use imported Cursor rules through its compatibility layer, but it does not natively auto-apply Cursor `.mdc` rules the way Cursor does.
+
+## Credits
+
+### Skills
+
+#### 信息安全
+
+- [awesome-game-security](https://github.com/gmh5225/awesome-game-security)
+
+#### 思考
+
+- [superpowers](https://github.com/karpathy/autoresearch)
+
+#### 研究
+
+- [autoresearch](https://github.com/karpathy/autoresearch)
+
+#### 开发
+
+- Pending attribution
+
+### Rules
+
+- Pending attribution
+
+### MCP
+
+- [ghidra-mcp](https://github.com/bethington/ghidra-mcp)
