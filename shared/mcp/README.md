@@ -1,9 +1,5 @@
 # Shared MCP Files
 
-This directory contains local MCP server implementation files referenced by the copied Codex and Cursor MCP configurations.
+There are no shared local MCP helper scripts referenced by the current Codex or Cursor configs on this machine.
 
-Included:
-
-- `bridge_mcp_ghidra.py`: local Python bridge used by both runtimes for the Ghidra MCP server
-
-The config snapshots still contain their original absolute paths. This file is copied here so the referenced implementation is preserved alongside the runtime configs.
+This directory remains in the repository so the absence is explicit and does not silently preserve stale files from older snapshots.

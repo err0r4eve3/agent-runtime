@@ -2,28 +2,30 @@
 
 Source snapshot:
 
-- `mcp/config.toml` comes from `C:\Users\daniel\.codex\config.toml`
-- `skills/local/` comes from `C:\Users\daniel\.codex\skills`
-- `skills/vendor-imports/skills-repo/` comes from `C:\Users\daniel\.codex\vendor_imports\skills` with `.git` excluded
-- `rules/local/` comes from `C:\Users\daniel\.codex\rules`
-- `rules/vendor-imports/cursor-rules/` comes from `C:\Users\daniel\.codex\vendor_imports\cursor-rules`
+- `mcp/config.toml` comes from `/Users/error4ever/.codex/config.toml`
+- `skills/local/` comes from the real directories under `/Users/error4ever/.codex/skills`
+- `skills/local-symlinks.json` records the top-level symlink entrypoints under `/Users/error4ever/.codex/skills`
+- `skills/vendor-imports/skills-repo/` comes from `/Users/error4ever/.codex/vendor_imports/skills` with `.git` excluded
+- `rules/local/` comes from `/Users/error4ever/.codex/rules`
+- `rules/vendor-imports/README.md` documents the imported-rule state on this machine
 
 Current snapshot summary:
 
-- `36` local Codex skill directories
-- `762` files in the imported Codex vendor skills repository snapshot
+- `9` real local Codex skill directories
+- `27` symlinked top-level Codex skill entrypoints
+- `765` files in the imported Codex vendor skills repository snapshot
 - `1` local Codex rules file
-- `43` imported Cursor rule files available to Codex as a library
+- `0` imported external Codex rule-library snapshots beyond the README note
 
-Recently synced local skills:
+Current local skills of note:
 
-- `frontend-design`
-- `web-design-guidelines`
-- `vercel-react-best-practices`
-- `better-auth-best-practices`
-- `find-skills`
+- `gstack`
+- `design-md`
+- `karpathy-autoresearch`
+- Cursor migration/authoring helpers (`cursor-create-*`, `cursor-update-settings`, `cursor-migrate-to-codex`)
 
-Important behavior note:
+Important behavior notes:
 
-- `rules/vendor-imports/cursor-rules/` is a preserved Cursor rule library imported into Codex.
-- Codex does not natively auto-apply `.mdc` rules; these files are typically used through the local `cursor-rules-library` skill under `skills/local/`.
+- This machine's gstack install exposes most Codex-facing skill entrypoints as absolute symlinks into `~/.gstack/repos/gstack/.agents/skills/`.
+- Those symlink targets are recorded in `skills/local-symlinks.json`; only real local directories are copied into `skills/local/`.
+- There is no extra imported Cursor-rule repository wired into Codex on this machine right now; only `rules/local/default.rules` is present.

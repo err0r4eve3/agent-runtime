@@ -2,19 +2,22 @@
 
 Source snapshot:
 
-- `mcp/mcp.json` comes from `C:\Users\daniel\.cursor\mcp.json`
-- `skills/skills-cursor/` comes from `C:\Users\daniel\.cursor\skills-cursor`
-- `skills/global-rules/` comes from `C:\Users\daniel\.cursor\global-rules\skills`
-- `rules/global-rules/` comes from `C:\Users\daniel\.cursor\global-rules\rules`
+- `skills/skills-cursor/` comes from `/Users/error4ever/.cursor/skills-cursor`
+- `extensions/extensions.json` comes from `/Users/error4ever/.cursor/extensions/extensions.json`
+- `extensions/catalog.json` is generated from the installed extension manifest plus each extension's `package.json`
+- `extensions/packages/*/package.json` comes from each installed extension bundle under `/Users/error4ever/.cursor/extensions/`
+- `mcp/README.md` documents the Cursor MCP state on this machine
+- `rules/README.md` documents the Cursor rules state on this machine
 
 Current snapshot summary:
 
 - `6` Cursor-managed skill directories
-- `23` Cursor global skill directories
-- `43` Cursor global rule files
+- `11` installed Cursor extensions tracked as metadata
+- `0` standalone Cursor MCP config files
+- `0` standalone Cursor global rule files
 
-Layout note:
+Layout notes:
 
-- `skills/skills-cursor/` contains the managed skills that Cursor stores separately.
-- `skills/global-rules/` contains the global skills installed under Cursor global rules.
-- `rules/global-rules/` preserves the original `.mdc` rule tree.
+- Cursor on this machine currently uses the managed `skills-cursor` tree only.
+- Full extension payloads are intentionally not copied; this snapshot keeps the install manifest and per-extension metadata needed to reconstruct what was installed.
+- See `extensions/README.md` for upstream marketplace/source links.
