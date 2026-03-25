@@ -10,10 +10,18 @@ Source snapshot:
 
 Current snapshot summary:
 
-- `31` local Codex skill directories
+- `36` local Codex skill directories
 - `762` files in the imported Codex vendor skills repository snapshot
 - `1` local Codex rules file
 - `43` imported Cursor rule files available to Codex as a library
+
+Recently synced local skills:
+
+- `frontend-design`
+- `web-design-guidelines`
+- `vercel-react-best-practices`
+- `better-auth-best-practices`
+- `find-skills`
 
 Important behavior note:
 

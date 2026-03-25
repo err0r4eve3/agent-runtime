@@ -42,7 +42,10 @@ Notes:
 
 #### 开发
 
-- Pending attribution
+- [anthropics/skills](https://github.com/anthropics/skills)
+- [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)
+- [better-auth/skills](https://github.com/better-auth/skills)
+- [vercel-labs/skills](https://github.com/vercel-labs/skills)
 
 ### Rules
 
