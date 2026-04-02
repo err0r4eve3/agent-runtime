@@ -1,33 +1,50 @@
 # agent-runtime
 
-This repository is a snapshot of the `Codex`, `Cursor`, and shared local plugin assets currently installed on this machine.
+Portable runtime snapshot and bootstrap repo for `Codex`, `Cursor`, and shared local agent tooling.
 
-The content is split by runtime first, then by asset type:
+This repo is meant to do two jobs:
 
-- `codex/mcp`: current Codex base config snapshot
-- `codex/skills`: local Codex skills, symlink inventory, and vendor-imported skills
-- `codex/rules`: local Codex rules plus notes for optional imported rule libraries
-- `cursor/skills`: current Cursor-managed skills
-- `cursor/extensions`: installed Cursor extension inventory plus per-extension `package.json` metadata
-- `cursor/mcp`: note for Cursor MCP state on this machine
-- `cursor/rules`: note for Cursor rules state on this machine
-- `shared/plugins`: cross-runtime local tools/plugins such as `opencli`
-- `shared/mcp`: note for shared MCP helper state on this machine
+- Preserve a clean snapshot of what is installed on a given machine.
+- Make it easier to rebuild the same runtime on another machine.
 
-What is intentionally not included:
+## Layout
+
+- `codex/`: Codex runtime snapshots, notes, and generated inventories
+- `cursor/`: Cursor runtime snapshots
+- `shared/`: cross-runtime tools and plugin metadata
+- `scripts/`: bootstrap and sync helpers
+- `inventories/<machine>/`: per-machine generated runtime snapshots
+
+## Codex flow
+
+On a machine that already has Codex:
+
+```bash
+python3 ~/.codex/scripts/generate_codex_skills_mcp_inventory.py
+bash scripts/sync_codex_runtime.sh
+```
+
+On a fresh machine you want to bring up to roughly the same runtime:
+
+```bash
+bash scripts/bootstrap_codex_runtime.sh
+bash scripts/sync_codex_runtime.sh
+```
+
+## What is intentionally not committed
 
 - auth/session/state databases
 - secrets and tokens
 - caches and logs unrelated to runtime behavior
 - hidden git metadata from imported vendor repositories
-- full Cursor extension bundles and other large binary payloads
+- large downloaded browser/runtime caches
 
-Notes:
+## Notes
 
-- The copied config and metadata files preserve their original absolute local paths where useful.
-- Codex top-level skill entrypoints are partly symlink-based on this machine; most real directories are copied under `codex/skills/local/`, while the machine-local gstack runtime shell is represented through `codex/skills/local-symlinks.json`.
-- Cursor does not currently have a standalone `mcp.json` or a separate global rules tree on this machine, so those folders only contain explanatory README files.
-- `opencli` is tracked under `shared/plugins/opencli/` because it is a cross-runtime local tool with both a local skill wrapper and a browser bridge extension.
+- The generated Codex inventory is committed in two forms:
+  `codex/docs/skills-mcp-inventory.md` for the current snapshot view, and
+  `inventories/<machine>/skills-mcp-inventory.md` for per-machine history.
+- This repo stores reproducible metadata first; some tools such as Jina Reader are documented but not installed locally because they are hosted services.
 
 ## Credits
 

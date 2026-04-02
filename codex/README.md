@@ -1,31 +1,25 @@
 # Codex Assets
 
-Source snapshot:
+This directory stores Codex-specific runtime state that is useful to recreate or inspect across machines.
 
-- `mcp/config.toml` comes from `/Users/error4ever/.codex/config.toml`
-- `skills/local/` comes from the real directories under `/Users/error4ever/.codex/skills`
-- `skills/local-symlinks.json` records the top-level symlink entrypoints under `/Users/error4ever/.codex/skills`
-- `skills/vendor-imports/skills-repo/` comes from `/Users/error4ever/.codex/vendor_imports/skills` with `.git` excluded
-- `rules/local/` comes from `/Users/error4ever/.codex/rules`
-- `rules/vendor-imports/README.md` documents the imported-rule state on this machine
+## Tracked content
 
-Current snapshot summary:
+- `mcp/config.toml`: current sanitized Codex config snapshot from `~/.codex/config.toml`
+- `skills/local/`: copied real local skill directories from `~/.codex/skills`
+- `skills/local-symlinks.json`: top-level Codex skill symlink inventory
+- `skills/vendor-imports/`: imported vendor skill snapshots that are worth preserving
+- `rules/`: local Codex rules snapshot
+- `docs/skills-mcp-inventory.md`: generated inventory of local skills, plugin skills, MCP-capable tools, bridge tools, versions, and update commands
+- `docs/runtime-notes.md`: stable notes about what is being tracked and why
 
-- `8` copied local Codex skill directories
-- `27` symlinked top-level Codex skill entrypoints
-- `765` files in the imported Codex vendor skills repository snapshot
-- `1` local Codex rules file
-- `0` imported external Codex rule-library snapshots beyond the README note
+## Refresh
 
-Current local skills of note:
+```bash
+python3 ~/.codex/scripts/generate_codex_skills_mcp_inventory.py
+bash scripts/sync_codex_runtime.sh
+```
 
-- `gstack` (represented via symlink inventory, not copied verbatim)
-- `design-md`
-- `karpathy-autoresearch`
-- Cursor migration/authoring helpers (`cursor-create-*`, `cursor-update-settings`, `cursor-migrate-to-codex`)
+## Important behavior notes
 
-Important behavior notes:
-
-- This machine's gstack install exposes most Codex-facing skill entrypoints as absolute symlinks into `~/.gstack/repos/gstack/.agents/skills/`.
-- Those symlink targets are recorded in `skills/local-symlinks.json`; only real local directories are copied into `skills/local/`.
-- There is no extra imported Cursor-rule repository wired into Codex on this machine right now; only `rules/local/default.rules` is present.
+- On this machine, many `gstack-*` Codex skill entrypoints are symlinks into `~/.gstack/repos/gstack/.agents/skills/`.
+- The generated inventory is the fastest way to inspect current Codex skills, plugin-provided skills, and local MCP/bridge tooling without manually traversing `~/.codex`.

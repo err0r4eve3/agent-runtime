@@ -1,107 +1,107 @@
 [
   {
     "name": "gstack-autoplan",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-autoplan/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-autoplan"
   },
   {
     "name": "gstack-benchmark",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-benchmark/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-benchmark"
   },
   {
     "name": "gstack-browse",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-browse/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-browse"
   },
   {
     "name": "gstack-canary",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-canary/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-canary"
   },
   {
     "name": "gstack-careful",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-careful/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-careful"
   },
   {
     "name": "gstack-cso",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-cso/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-cso"
   },
   {
     "name": "gstack-design-consultation",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-design-consultation/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-design-consultation"
   },
   {
     "name": "gstack-design-review",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-design-review/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-design-review"
   },
   {
     "name": "gstack-document-release",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-document-release/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-document-release"
   },
   {
     "name": "gstack-freeze",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-freeze/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-freeze"
   },
   {
     "name": "gstack-guard",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-guard/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-guard"
   },
   {
     "name": "gstack-investigate",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-investigate/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-investigate"
   },
   {
     "name": "gstack-land-and-deploy",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-land-and-deploy/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-land-and-deploy"
   },
   {
     "name": "gstack-office-hours",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-office-hours/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-office-hours"
   },
   {
     "name": "gstack-plan-ceo-review",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-plan-ceo-review/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-plan-ceo-review"
   },
   {
     "name": "gstack-plan-design-review",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-plan-design-review/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-plan-design-review"
   },
   {
     "name": "gstack-plan-eng-review",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-plan-eng-review/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-plan-eng-review"
   },
   {
     "name": "gstack-qa",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-qa/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-qa"
   },
   {
     "name": "gstack-qa-only",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-qa-only/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-qa-only"
   },
   {
     "name": "gstack-retro",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-retro/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-retro"
   },
   {
     "name": "gstack-review",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-review/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-review"
   },
   {
     "name": "gstack-setup-browser-cookies",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-setup-browser-cookies/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-setup-browser-cookies"
   },
   {
     "name": "gstack-setup-deploy",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-setup-deploy/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-setup-deploy"
   },
   {
     "name": "gstack-ship",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-ship/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-ship"
   },
   {
     "name": "gstack-unfreeze",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-unfreeze/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-unfreeze"
   },
   {
     "name": "gstack-upgrade",
-    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-upgrade/"
+    "target": "/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-upgrade"
   },
   {
     "name": "office-hours",
