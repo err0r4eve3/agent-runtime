@@ -6,6 +6,7 @@ CODEX_HOME="${HOME}/.codex"
 GENERATOR="$CODEX_HOME/scripts/generate_codex_skills_mcp_inventory.py"
 SOURCE_DOC="$CODEX_HOME/docs/skills-mcp-inventory.md"
 TARGET_CODEX_DOC="$REPO_ROOT/codex/docs/skills-mcp-inventory.md"
+TARGET_AGENTS="$REPO_ROOT/codex/AGENTS.md"
 MACHINE_NAME="${1:-$(hostname -s)}"
 TARGET_DIR="$REPO_ROOT/inventories/$MACHINE_NAME"
 TARGET_DOC="$TARGET_DIR/skills-mcp-inventory.md"
@@ -27,6 +28,7 @@ if [ ! -f "$SOURCE_DOC" ]; then
 fi
 
 mkdir -p "$REPO_ROOT/codex/docs" "$TARGET_DIR" "$TARGET_LOCAL_SKILLS"
+cp "$CODEX_HOME/AGENTS.md" "$TARGET_AGENTS"
 cp "$CODEX_HOME/config.toml" "$TARGET_CONFIG"
 cp "$SOURCE_DOC" "$TARGET_CODEX_DOC"
 cp "$SOURCE_DOC" "$TARGET_DOC"
@@ -66,6 +68,7 @@ rm -rf "$TARGET_LOCAL_SKILLS/gstack"
 } > "$TARGET_META"
 
 echo "synced:"
+echo "  $TARGET_AGENTS"
 echo "  $TARGET_CONFIG"
 echo "  $TARGET_CODEX_DOC"
 echo "  $TARGET_DOC"

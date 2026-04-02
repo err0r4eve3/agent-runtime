@@ -10,6 +10,7 @@ This repo is meant to do two jobs:
 ## Layout
 
 - `codex/`: Codex runtime snapshots, notes, and generated inventories
+- `codex/AGENTS.md`: persistent Codex local instruction overlay
 - `codex/templates/`: reusable task templates for Codex CLI / cloud tasks
 - `cursor/`: Cursor runtime snapshots
 - `shared/`: cross-runtime tools and plugin metadata

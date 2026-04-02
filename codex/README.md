@@ -4,6 +4,7 @@ This directory stores Codex-specific runtime state that is useful to recreate or
 
 ## Tracked content
 
+- `AGENTS.md`: local Codex persistent instruction overlay from `~/.codex/AGENTS.md`
 - `mcp/config.toml`: current sanitized Codex config snapshot from `~/.codex/config.toml`
 - `skills/local/`: copied real local skill directories from `~/.codex/skills`
 - `skills/local-symlinks.json`: top-level Codex skill symlink inventory
