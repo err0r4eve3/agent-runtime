@@ -4,14 +4,14 @@
 
 ## Snapshot
 
-- Generated at: `2026-04-03 00:16:58 CST`
+- Generated at: `2026-04-03 00:36:29 CST`
 - Codex latest known version: `0.116.0`
 - Model: `gpt-5.4`
 - Reasoning effort: `xhigh`
 - Sandbox mode: `danger-full-access`
 - Approval policy: `never`
 - Enabled curated plugins: `5`
-- Local active skills: `44`
+- Local active skills: `48`
 - Local backup skills: `4`
 
 ## Custom MCP Config
@@ -80,9 +80,11 @@
 | cursor-migrate-to-codex | Use this skill when the task is to convert Cursor guidance into Codex skills. | `/Users/error4ever/.codex/skills/cursor-migrate-to-codex/SKILL.md` |
 | cursor-update-settings | Use this skill when the task is about Cursor user settings or workspace settings. | `/Users/error4ever/.codex/skills/cursor-update-settings/SKILL.md` |
 | design-md | You are an expert Design Systems Lead. Your goal is to analyze the provided technical assets and synthesize a "Semantic Design System" into  | `/Users/error4ever/.codex/skills/design-md/SKILL.md` |
+| develop-web-game | Build games in small steps and validate every change. Treat each iteration as: implement → act → pause → observe → adjust. | `/Users/error4ever/.codex/skills/develop-web-game/SKILL.md` |
 | doc | - Read or review DOCX content where layout matters (tables, diagrams, pagination). | `/Users/error4ever/.codex/skills/doc/SKILL.md` |
 | find-skills | This skill helps you discover and install skills from the open agent skills ecosystem. | `/Users/error4ever/.codex/skills/find-skills/SKILL.md` |
 | frontend-design | This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real work | `/Users/error4ever/.codex/skills/frontend-design/SKILL.md` |
+| gh-fix-ci | Use gh to locate failing PR checks, fetch GitHub Actions logs for actionable failures, summarize the failure snippet, then propose a fix pla | `/Users/error4ever/.codex/skills/gh-fix-ci/SKILL.md` |
 | gstack | _ROOT=$(git rev-parse --show-toplevel 2>/dev/null) | `/Users/error4ever/.codex/skills/gstack/SKILL.md` |
 | gstack-autoplan | _ROOT=$(git rev-parse --show-toplevel 2>/dev/null) | `/Users/error4ever/.codex/skills/gstack-autoplan/SKILL.md` |
 | gstack-benchmark | _ROOT=$(git rev-parse --show-toplevel 2>/dev/null) | `/Users/error4ever/.codex/skills/gstack-benchmark/SKILL.md` |
@@ -114,10 +116,12 @@
 | mcp-builder | Create MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. The quality of  | `/Users/error4ever/.codex/skills/mcp-builder/SKILL.md` |
 | pdf | - Read or review PDF content where layout and visuals matter. | `/Users/error4ever/.codex/skills/pdf/SKILL.md` |
 | playwright | Drive a real browser from the terminal using `playwright-cli`. Prefer the bundled wrapper script so the CLI works even when it is not global | `/Users/error4ever/.codex/skills/playwright/SKILL.md` |
+| playwright-interactive | Use a persistent `js_repl` Playwright session to debug local web or Electron apps, keep the same handles alive across iterations, and run fu | `/Users/error4ever/.codex/skills/playwright-interactive/SKILL.md` |
 | requesting-code-review | Dispatch superpowers:code-reviewer subagent to catch issues before they cascade. The reviewer gets precisely crafted context for evaluation  | `/Users/error4ever/.codex/skills/requesting-code-review/SKILL.md` |
 | spreadsheet | - Create new workbooks with formulas, formatting, and structured layouts. | `/Users/error4ever/.codex/skills/spreadsheet/SKILL.md` |
 | systematic-debugging | Random fixes waste time and create new bugs. Quick patches mask underlying issues. | `/Users/error4ever/.codex/skills/systematic-debugging/SKILL.md` |
 | verification-before-completion | Claiming work is complete without verification is dishonesty, not efficiency. | `/Users/error4ever/.codex/skills/verification-before-completion/SKILL.md` |
+| webapp-testing | To test local web applications, write native Python Playwright scripts. | `/Users/error4ever/.codex/skills/webapp-testing/SKILL.md` |
 
 ## Local Backup Skills
 
