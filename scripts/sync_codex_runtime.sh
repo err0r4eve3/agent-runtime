@@ -53,6 +53,8 @@ rsync -a --delete \
   "$CODEX_HOME/skills/" "$TARGET_LOCAL_SKILLS/"
 
 find "$TARGET_LOCAL_SKILLS" -maxdepth 1 -type l -delete 2>/dev/null || true
+find "$TARGET_LOCAL_SKILLS" -maxdepth 1 -type d -name '*.bak-*' -prune -exec rm -rf {} +
+rm -rf "$TARGET_LOCAL_SKILLS/gstack"
 
 {
   echo "machine=$MACHINE_NAME"

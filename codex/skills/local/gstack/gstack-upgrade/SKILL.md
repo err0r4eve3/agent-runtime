@@ -1,1 +1,0 @@
-/Users/error4ever/.gstack/repos/gstack/.agents/skills/gstack-upgrade/SKILL.md
