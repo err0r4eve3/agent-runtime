@@ -4,7 +4,7 @@
 
 ## Snapshot
 
-- Generated at: `2026-04-03 00:38:44 CST`
+- Generated at: `2026-04-03 01:03:47 CST`
 - Codex latest known version: `0.116.0`
 - Model: `gpt-5.4`
 - Reasoning effort: `xhigh`
@@ -142,6 +142,7 @@
 | context7-mcp | 2.1.6 | Context7 MCP server | `/Users/error4ever/.local/bin/context7-mcp` | `npm install -g --prefix ~/.local @upstash/context7-mcp@latest` |
 | agent-reach | 1.4.0 | Search and platform-access installer / health check | `/Users/error4ever/.local/bin/agent-reach` | `uv tool install --python python3.11 --upgrade --from https://github.com/Panniantong/Agent-Reach/archive/main.zip agent-reach` |
 | scrapling | 0.4.3 | Anti-bot scraping framework with MCP mode | `/Users/error4ever/.local/bin/scrapling` | `uv tool install --python python3.11 --upgrade 'scrapling[fetchers]'` |
+| opencli-rs | 0.2.3 | Single-binary Rust rewrite of OpenCLI | `/Users/error4ever/.local/bin/opencli-rs` | `curl -fL -o /tmp/opencli-rs.tar.gz https://github.com/nashsu/opencli-rs/releases/latest/download/opencli-rs-aarch64-apple-darwin.tar.gz && tar -xzf /tmp/opencli-rs.tar.gz -C /tmp && install -m 755 /tmp/opencli-rs ~/.local/bin/opencli-rs` |
 
 ## Repository-based Integrations
 
@@ -150,6 +151,7 @@
 | grok-bridge | 9a2d8ab | `/Users/error4ever/.local/share/free-agent-tools/grok-bridge` | /Users/error4ever/.local/bin/grok-bridge-start, /Users/error4ever/.local/bin/grok-chat | https://github.com/ythx-101/grok-bridge.git | `git -C ~/.local/share/free-agent-tools/grok-bridge pull --ff-only` |
 | web-access | 7ff4877 | `/Users/error4ever/.local/share/free-agent-tools/web-access` | skill repo only | https://github.com/eze-is/web-access.git | `git -C ~/.local/share/free-agent-tools/web-access pull --ff-only` |
 | opencli-source | ed1a61a | `/Users/error4ever/.local/share/free-agent-tools/opencli-source` | /Users/error4ever/.local/share/free-agent-tools/opencli-source/extension | https://github.com/jackwener/opencli.git | `git -C ~/.local/share/free-agent-tools/opencli-source pull --ff-only` |
+| opencli-rs | b54bf68 | `/Users/error4ever/.local/share/free-agent-tools/opencli-rs` | /Users/error4ever/.local/bin/opencli-rs | https://github.com/nashsu/opencli-rs.git | `git -C ~/.local/share/free-agent-tools/opencli-rs pull --ff-only` |
 
 ## Other Related UV Tools Present
 
