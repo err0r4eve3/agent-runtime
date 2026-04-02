@@ -70,6 +70,12 @@ For each substantial task, explicitly reason through:
 - For commands containing JSON, regex, multiple quoting layers, or shell substitution, rewrite to the safest readable form instead of forcing a brittle one-liner.
 - If a command is fragile enough that quoting mistakes are likely, split it into smaller commands or write a temporary script instead.
 
+# Error learning loop
+- Treat command failures, test failures, build breaks, and tool exceptions as reusable evidence instead of one-off setbacks.
+- Before retrying the same class of operation, check whether the runtime or repository already has distilled learnings such as `codex/learning/distilled-rules.md`.
+- Promote only repeated, stable failure patterns that have a concrete prevention step. Do not auto-edit persistent instructions from a single noisy log or environment-specific glitch.
+- When a failure pattern keeps recurring, prefer turning it into a checked-in script, validation command, template step, or short guardrail instead of relying on conversational memory.
+
 # Verification loop
 - Every meaningful change must be validated.
 - Prefer deterministic checks first: unit tests, typecheck, lint, build, targeted scripts, static analysis.
