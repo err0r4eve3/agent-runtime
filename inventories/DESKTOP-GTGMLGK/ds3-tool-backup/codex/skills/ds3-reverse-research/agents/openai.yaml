@@ -1,0 +1,4 @@
+interface:
+  display_name: "DS3 Reverse Research"
+  short_description: "Guide DS3 reverse workflows and evidence-based writeback"
+  default_prompt: "Use $ds3-reverse-research to investigate a DS3-Tool reverse-engineering task and produce the current frontier, evidence level, blocker, and next anchor."
