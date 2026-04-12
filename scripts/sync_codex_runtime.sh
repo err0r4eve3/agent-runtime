@@ -14,24 +14,24 @@ TARGET_META="$TARGET_DIR/metadata.txt"
 TARGET_CONFIG="$REPO_ROOT/codex/mcp/config.toml"
 TARGET_LOCAL_SKILLS="$REPO_ROOT/codex/skills/local"
 TARGET_SYMLINKS="$REPO_ROOT/codex/skills/local-symlinks.json"
+GENERATED_DOC_AVAILABLE=0
 
-if [ ! -f "$GENERATOR" ]; then
-  echo "missing inventory generator: $GENERATOR" >&2
-  exit 1
+if [ -f "$GENERATOR" ]; then
+  python3 "$GENERATOR" >/dev/null || true
 fi
 
-python3 "$GENERATOR" >/dev/null
-
-if [ ! -f "$SOURCE_DOC" ]; then
-  echo "missing generated inventory: $SOURCE_DOC" >&2
-  exit 1
+if [ -f "$SOURCE_DOC" ]; then
+  GENERATED_DOC_AVAILABLE=1
 fi
 
 mkdir -p "$REPO_ROOT/codex/docs" "$TARGET_DIR" "$TARGET_LOCAL_SKILLS"
 cp "$CODEX_HOME/AGENTS.md" "$TARGET_AGENTS"
 cp "$CODEX_HOME/config.toml" "$TARGET_CONFIG"
-cp "$SOURCE_DOC" "$TARGET_CODEX_DOC"
-cp "$SOURCE_DOC" "$TARGET_DOC"
+
+if [ "$GENERATED_DOC_AVAILABLE" -eq 1 ]; then
+  cp "$SOURCE_DOC" "$TARGET_CODEX_DOC"
+  cp "$SOURCE_DOC" "$TARGET_DOC"
+fi
 
 python3 - <<'PY' > "$TARGET_SYMLINKS"
 from pathlib import Path
@@ -64,12 +64,20 @@ rm -rf "$TARGET_LOCAL_SKILLS/gstack"
   echo "hostname=$(hostname -s)"
   echo "os=$(uname -s)"
   echo "arch=$(uname -m)"
-  echo "codex_inventory_source=$SOURCE_DOC"
+  if [ "$GENERATED_DOC_AVAILABLE" -eq 1 ]; then
+    echo "codex_inventory_source=$SOURCE_DOC"
+  else
+    echo "codex_inventory_source=unavailable"
+  fi
 } > "$TARGET_META"
 
 echo "synced:"
 echo "  $TARGET_AGENTS"
 echo "  $TARGET_CONFIG"
-echo "  $TARGET_CODEX_DOC"
-echo "  $TARGET_DOC"
+if [ "$GENERATED_DOC_AVAILABLE" -eq 1 ]; then
+  echo "  $TARGET_CODEX_DOC"
+  echo "  $TARGET_DOC"
+else
+  echo "  inventory generator unavailable; left existing skills/MCP inventory docs unchanged"
+fi
 echo "  $TARGET_META"

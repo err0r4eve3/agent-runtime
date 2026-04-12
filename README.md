@@ -4,26 +4,27 @@ Portable runtime snapshot and bootstrap repo for `Codex`, `Cursor`, and shared l
 
 This repo is meant to do two jobs:
 
-- Preserve a clean snapshot of what is installed on a given machine.
-- Make it easier to rebuild the same runtime on another machine.
+- Preserve a canonical sync snapshot of the current AI tooling setup.
+- Make it easier to rebuild or align the same runtime on another machine.
 
 ## Layout
 
 - `codex/`: Codex runtime snapshots, notes, and generated inventories
 - `codex/AGENTS.md`: persistent Codex local instruction overlay
 - `codex/learning/`: failure-learning workflow, distilled rules, and task plans
+- `codex/mcp/repos/`: tracked local MCP repositories or runtime bundles worth syncing across machines
+- `codex/skills/projects/`: project-specific skill snapshots that are not part of `~/.codex/skills`
 - `codex/templates/`: reusable task templates for Codex CLI / cloud tasks
 - `cursor/`: Cursor runtime snapshots
 - `shared/`: cross-runtime tools and plugin metadata
 - `scripts/`: bootstrap and sync helpers
-- `inventories/<machine>/`: per-machine generated runtime snapshots
+- `inventories/<machine>/`: per-machine metadata, generated inventories, and lightweight history
 
 ## Codex flow
 
 On a machine that already has Codex:
 
 ```bash
-python3 ~/.codex/scripts/generate_codex_skills_mcp_inventory.py
 bash scripts/sync_codex_runtime.sh
 bash scripts/refresh_codex_learning.sh
 ```
@@ -46,14 +47,13 @@ bash scripts/refresh_codex_learning.sh
 
 ## Notes
 
-- The generated Codex inventory is committed in two forms:
-  `codex/docs/skills-mcp-inventory.md` for the current snapshot view, and
-  `inventories/<machine>/skills-mcp-inventory.md` for per-machine history.
+- `codex/` is the canonical sync target and may be overwritten when you intentionally promote a new machine snapshot.
+- `inventories/<machine>/` is now lightweight history and metadata, not the place for large primary runtime backups.
 - Codex failure learning is split on purpose:
   sanitized shared rules live in `codex/learning/`,
   machine-level summaries live in `inventories/<machine>/codex-learning-summary.md`,
   and raw harvested failure records stay under gitignored `codex/learning/generated/`.
-- This repo stores reproducible metadata first; some tools such as Jina Reader are documented but not installed locally because they are hosted services.
+- The repo stores reproducible metadata first; MCP repos and runtime bundles are included only when they are local, stable, and worth syncing across machines.
 
 ## Credits
 

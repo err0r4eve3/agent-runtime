@@ -1,31 +1,58 @@
+personality = "pragmatic"
 model = "gpt-5.4"
-model_reasoning_effort = "xhigh"
+model_reasoning_effort = "medium"
 sandbox_mode = "danger-full-access"
 approval_policy = "never"
-personality = "pragmatic"
-[projects."/Users/error4ever"]
-trust_level = "trusted"
 
-[notice.model_migrations]
-"gpt-5.3-codex" = "gpt-5.4"
+[windows]
+sandbox = "elevated"
 
-[features]
-multi_agent = true
+[sandbox_workspace_write]
+network_access = true
 
-[plugins."google-calendar@openai-curated"]
-enabled = true
+# MCP servers migrated from C:\\Users\\Daniel\\.cursor\\mcp.json
 
-[plugins."gmail@openai-curated"]
+[mcp_servers.playwright]
+command = 'C:\Program Files\nodejs\npx.cmd'
+args = ['-y', '@playwright/mcp@latest']
+startup_timeout_sec = 120
+tool_timeout_sec = 300
+
+[mcp_servers.playwright.tools.browser_navigate]
+approval_mode = "approve"
+
+[mcp_servers.playwright.tools.browser_evaluate]
+approval_mode = "approve"
+
+[mcp_servers.mcp-ghidra]
+command = 'C:\Users\Daniel\AppData\Local\Programs\Python\Python313\python.exe'
+args = [
+  'C:\Users\Daniel\Desktop\tools\二进制\ghidra_12.0.3_PUBLIC\bridge_mcp_ghidra.py',
+  '--profile',
+  're',
+  '--approval-mode',
+  'never',
+]
+startup_timeout_sec = 120
+tool_timeout_sec = 600
+
+# GitHub MCP server, configured per GitHub's Codex installation guide.
+# Requires the environment variable GITHUB_PAT_TOKEN to be set to a GitHub PAT.
+[mcp_servers.github]
+url = "https://api.githubcopilot.com/mcp/"
+bearer_token_env_var = "GITHUB_PAT_TOKEN"
+
+[mcp_servers.x64dbg]
+command = 'C:\Users\Daniel\AppData\Local\Programs\Python\Python313\python.exe'
+args = ['C:\Users\Daniel\Desktop\tools\x64dbgMCP\release-build1.1\x64dbg.py']
+startup_timeout_sec = 120
+tool_timeout_sec = 300
+
+[plugins."google-drive@openai-curated"]
 enabled = true
 
 [plugins."github@openai-curated"]
 enabled = true
 
-[plugins."google-drive@openai-curated"]
-enabled = true
-
-[plugins."canva@openai-curated"]
-enabled = true
-
-[sandbox_workspace_write]
-network_access = true
+[projects.'C:\Users\Daniel\source\repos\DS3-Tool']
+trust_level = "trusted"

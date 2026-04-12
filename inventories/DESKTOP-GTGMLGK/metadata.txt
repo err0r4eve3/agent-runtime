@@ -3,4 +3,4 @@ generated_at=2026-04-12 19:00:00 CST
 hostname=DESKTOP-GTGMLGK
 os=Windows
 arch=x64
-notes=Contains DS3-Tool-specific Codex backup under inventories/DESKTOP-GTGMLGK/ds3-tool-backup
+notes=Canonical Windows Codex sync source promoted into codex/; inventory kept lightweight
