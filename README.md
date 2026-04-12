@@ -57,18 +57,19 @@ bash scripts/refresh_codex_learning.sh
 
 ## Credits
 
+### MCP repositories
+
+- `codex/mcp/repos/ghidra-mcp/` is synced from a local working tree based on [bethington/ghidra-mcp](https://github.com/bethington/ghidra-mcp), with ongoing personal fork work tracked at [err0r4eve3/ghidra-mcp](https://github.com/err0r4eve3/ghidra-mcp).
+- `codex/mcp/repos/x64dbg-mcp/` is synced from the local clone of [Wasdubya/x64dbgMCP](https://github.com/Wasdubya/x64dbgMCP).
+
 ### Skills
 
-#### 思考 / 研究
+- `codex/skills/local/` is the canonical snapshot of the current machine's `~/.codex/skills`, including locally maintained process and research skills.
+- `codex/skills/local/.system/` preserves Codex-bundled system skills; related public skill packaging and vendor snapshots are tracked alongside [openai/skills](https://github.com/openai/skills).
+- `codex/skills/vendor-imports/skills-repo/` preserves a vendor skill snapshot from [openai/skills](https://github.com/openai/skills).
+- `codex/skills/projects/ds3-tool/` is synced from [err0r4eve3/DS3-Tool](https://github.com/err0r4eve3/DS3-Tool)'s local `skills/` directory.
 
-- [karpathy/autoresearch](https://github.com/karpathy/autoresearch)
+### Plugins and extensions
 
-#### 开发
-
-- [garrytan/gstack](https://github.com/garrytan/gstack)
-- [openai/skills](https://github.com/openai/skills)
-
-### Plugins
-
-- [jackwener/opencli](https://github.com/jackwener/opencli)
-- Installed Cursor extension links are documented in [cursor/extensions/README.md](cursor/extensions/README.md)
+- `shared/plugins/opencli/` tracks metadata derived from [jackwener/opencli](https://github.com/jackwener/opencli).
+- Installed Cursor extension sources are documented in [cursor/extensions/README.md](cursor/extensions/README.md).
