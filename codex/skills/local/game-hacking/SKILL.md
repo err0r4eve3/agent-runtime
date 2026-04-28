@@ -134,23 +134,23 @@ Win32k syscall hooks
 ```cpp
 Vector2 WorldToScreen(Vector3 worldPos, Matrix viewMatrix) {
     Vector4 clipCoords;
-    clipCoords.x = worldPos.x * viewMatrix[0] + worldPos.y * viewMatrix[4] + 
+    clipCoords.x = worldPos.x * viewMatrix[0] + worldPos.y * viewMatrix[4] +
                    worldPos.z * viewMatrix[8] + viewMatrix[12];
-    clipCoords.y = worldPos.x * viewMatrix[1] + worldPos.y * viewMatrix[5] + 
+    clipCoords.y = worldPos.x * viewMatrix[1] + worldPos.y * viewMatrix[5] +
                    worldPos.z * viewMatrix[9] + viewMatrix[13];
-    clipCoords.w = worldPos.x * viewMatrix[3] + worldPos.y * viewMatrix[7] + 
+    clipCoords.w = worldPos.x * viewMatrix[3] + worldPos.y * viewMatrix[7] +
                    worldPos.z * viewMatrix[11] + viewMatrix[15];
-    
+
     if (clipCoords.w < 0.1f) return invalid;
-    
+
     Vector2 NDC;
     NDC.x = clipCoords.x / clipCoords.w;
     NDC.y = clipCoords.y / clipCoords.w;
-    
+
     Vector2 screen;
     screen.x = (screenWidth / 2) * (NDC.x + 1);
     screen.y = (screenHeight / 2) * (1 - NDC.y);
-    
+
     return screen;
 }
 ```

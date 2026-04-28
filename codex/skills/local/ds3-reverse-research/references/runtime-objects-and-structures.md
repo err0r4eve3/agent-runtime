@@ -9,6 +9,15 @@ Use this reference for player runtime model work, gameplay structures, bullet la
 - Separate local authoring input, sync payload, serializer boundary, and runtime apply sink.
 - Keep struct names tied to stable anchors and role, not one offset guess.
 
+## DS3-Tools Repo Surfaces
+
+- `docs/topics/player-runtime-model.md`
+- `docs/topics/bullet-structure.md`
+- `docs/topics/item-drop.md`
+- `docs/reverse/gameplay-systems/bullet_structure_analysis.md`
+- `docs/reverse/runtime-addresses/address_tree_ds3proxy_runtime_game.md`
+- `docs/reverse/runtime-addresses/address_tree_verification_queue.md`
+
 ## Object-Model Pattern
 
 1. Start from the current wrapper or access path.
@@ -54,3 +63,4 @@ For player work, keep wrapper objects, runtime player objects, and game-data sid
 - Project wrapper names treated as native owner truth
 - One constructor or one field neighborhood treated as full class proof
 - Local feature input treated as network or runtime sink layout
+- Topic summaries changed without syncing the relevant address tree or queue notes

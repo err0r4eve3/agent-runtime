@@ -195,17 +195,17 @@ float4 PSChams(VS_OUTPUT input) : SV_Target {
 D3DXVECTOR3 WorldToScreen(D3DXVECTOR3 pos, D3DXMATRIX viewProjection) {
     D3DXVECTOR4 clipCoords;
     D3DXVec3Transform(&clipCoords, &pos, &viewProjection);
-    
+
     if (clipCoords.w < 0.1f) return invalid;
-    
+
     D3DXVECTOR3 NDC;
     NDC.x = clipCoords.x / clipCoords.w;
     NDC.y = clipCoords.y / clipCoords.w;
-    
+
     D3DXVECTOR3 screen;
     screen.x = (viewport.Width / 2) * (NDC.x + 1);
     screen.y = (viewport.Height / 2) * (1 - NDC.y);
-    
+
     return screen;
 }
 ```

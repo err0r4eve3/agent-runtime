@@ -1,0 +1,9 @@
+machine=DESKTOP-F61S3LC
+generated_at=2026-04-28 21:58:54
+hostname=DESKTOP-F61S3LC
+os=MINGW64_NT-10.0-26200
+arch=x86_64
+codex_inventory_source=unavailable
+codex_primary_runtime_json=/c/Users/daniel/.cache/codex-runtimes/codex-primary-runtime/runtime.json
+codex_agents_source=/c/Users/daniel/.codex/agents
+agent_home_skills_source=/c/Users/daniel/.agents/skills

@@ -10,6 +10,15 @@ Use this reference for anti-cheat, status upload, telemetry, `field 62`, ban-pat
 - source status IDs
 - incoming penalty or push handling
 
+## DS3-Tools Repo Surfaces
+
+- `docs/reverse/anti-cheat/ban_info_summary.md`
+- `docs/topics/anti-ban-and-status.md`
+- `docs/reverse/network-packets/frpgmessage_analysis.md` when anti-cheat or status work crosses FRPG / protobuf
+- `docs/reverse/runtime-addresses/address_tree_ds3proxy_runtime_game.md` for offsets, owners, and hook points
+- `docs/reverse/dearxan/address_tree_dearxan.md` for dearxan / SteamStub / anti-tamper handoff work
+- `docs/reverse/runtime-addresses/address_tree_verification_queue.md` for unresolved blockers and next anchors
+
 If two constants share the same number, that does not make them the same domain.
 
 ## Number-Space Hygiene
@@ -53,3 +62,4 @@ Use this order when sources disagree:
 - State the current producer, checked data, rule, and consumer if known
 - Record the exact stop point when the chain is still open
 - Record the false leads that were ruled out so the same helper layer is not scanned again
+- Sync the anti-cheat/status summary, relevant address-tree surfaces, and queue notes together when the conclusion changes more than one repo surface

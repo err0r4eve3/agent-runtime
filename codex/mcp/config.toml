@@ -1,8 +1,9 @@
 personality = "pragmatic"
-model = "gpt-5.4"
-model_reasoning_effort = "medium"
+model = "gpt-5.5"
+model_reasoning_effort = "xhigh"
 sandbox_mode = "danger-full-access"
 approval_policy = "never"
+project_doc_fallback_filenames = ["cursor.md", ".cursorrules"]
 
 [windows]
 sandbox = "elevated"
@@ -25,13 +26,9 @@ approval_mode = "approve"
 approval_mode = "approve"
 
 [mcp_servers.mcp-ghidra]
-command = 'C:\Users\Daniel\AppData\Local\Programs\Python\Python313\python.exe'
+command = 'C:\Users\daniel\AppData\Local\Programs\Python\Python312\python.exe'
 args = [
-  'C:\Users\Daniel\Desktop\tools\二进制\ghidra_12.0.3_PUBLIC\bridge_mcp_ghidra.py',
-  '--profile',
-  're',
-  '--approval-mode',
-  'never',
+  'C:\Users\daniel\.codex\mcp\ghidra\bridge_mcp_ghidra_wrapper.py',
 ]
 startup_timeout_sec = 120
 tool_timeout_sec = 600
@@ -54,5 +51,87 @@ enabled = true
 [plugins."github@openai-curated"]
 enabled = true
 
+[plugins."superpowers@openai-curated"]
+enabled = true
+
+[plugins."build-web-apps@openai-curated"]
+enabled = true
+
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."chatgpt-apps@openai-curated"]
+enabled = true
+
+[plugins."render@openai-curated"]
+enabled = true
+
+[plugins."latex-tectonic@openai-bundled"]
+enabled = true
+
 [projects.'C:\Users\Daniel\source\repos\DS3-Tool']
 trust_level = "trusted"
+
+[projects.'C:\Users\daniel\source\repos\shipyard']
+trust_level = "trusted"
+
+[projects.'C:\Users\daniel\source\repos\DS3-Tools']
+trust_level = "trusted"
+
+[projects.'C:\Users\daniel\vscode']
+trust_level = "trusted"
+
+[projects.'C:\Users\daniel\Downloads\mathorcup']
+trust_level = "trusted"
+
+[projects.'c:\users\daniel\documents\codex\2026-04-21-https-github-com-jacob-bd-notebooklm']
+trust_level = "trusted"
+
+[projects.'c:\users\daniel\source\repos\统计建模']
+trust_level = "trusted"
+
+[projects.'c:\users\daniel\documents\codex\2026-04-27\codex-chatgpt-pro']
+trust_level = "trusted"
+
+[projects.'c:\users\daniel\documents\new project']
+trust_level = "trusted"
+
+[projects.'c:\users\daniel\documents\new project 2']
+trust_level = "trusted"
+
+[projects.'c:\users\daniel\documents\codex\2026-04-28\codex-waza-gstack-compoundenginerring']
+trust_level = "trusted"
+
+[projects.'c:\users\daniel\documents\new project 4']
+trust_level = "trusted"
+
+[marketplaces.openai-bundled]
+last_updated = "2026-04-28T08:10:36Z"
+source_type = "local"
+source = '\\?\C:\Users\daniel\.codex\.tmp\bundled-marketplaces\openai-bundled'
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-04-28T08:25:54Z"
+source_type = "local"
+source = '\\?\C:\Users\daniel\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[features]
+memories = true
+
+[memories]
+no_memories_if_mcp_or_web_search = true
+
+# NotebookLM MCP server
+[mcp_servers.notebooklm]
+command = "C:\\Users\\daniel\\.local\\bin\\notebooklm-mcp.exe"
+args = []
+enabled = true

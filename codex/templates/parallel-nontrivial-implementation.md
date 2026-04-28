@@ -6,7 +6,7 @@ Use this as the task body for Codex CLI or Codex cloud tasks when the work is mo
 Implement <task> in this repository.
 
 For non-trivial work:
-1. Check for relevant in-repo learnings or guardrails, for example `codex/learning/distilled-rules.md`, before planning or implementing.
+1. Check current repo instructions, project docs, and Codex native memories before planning or implementing.
 2. Create or update an in-repo execution plan with milestones, acceptance criteria, validation commands, and risks.
 3. Spawn parallel subagents for:
    - codebase exploration / evidence collection
@@ -25,5 +25,5 @@ Keep diffs scoped and evidence-based.
 
 - This template is intentionally explicit because Codex only uses subagents when asked directly.
 - Keep the execution plan in-repo so the task state survives model restarts and handoffs.
-- Reusing a known guardrail is cheaper and safer than rediscovering the same failure mode.
+- Reusing current repo instructions and native memory context is cheaper than rediscovering the same failure mode.
 - Use this for repository work, not for trivial one-file edits where the planning overhead is not justified.

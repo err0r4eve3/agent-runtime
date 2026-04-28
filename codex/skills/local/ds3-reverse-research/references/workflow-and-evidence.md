@@ -11,12 +11,19 @@ Use this reference first whenever the task is mainly about process, naming, evid
 - Express every blocker as a concrete next jump, next owner, or next evidence type.
 - Let multiple readers collect evidence if needed, but keep one canonical writer.
 
+## DS3-Tools Repo Entry
+
+- Start from `docs/reverse/README.md`.
+- Read `docs/reverse/source-files.md` before deep binary work so code and docs stay tied to the same surfaces.
+- Use the relevant stable system-of-record docs before archive notes.
+- Open `docs/reverse/runtime-addresses/address_tree_verification_queue.md` early when the task is mainly unresolved naming, owner recovery, or next-step routing.
+
 ## Standard Flow
 
 1. Freeze the question and output surface.
    Write the smallest problem, the canonical docs, and the proof of progress for this round.
 2. Build a repo baseline.
-   Start from source, existing docs, validators, wrappers, managers, and plans before binary exploration.
+   Start from source, stable docs, validators, wrappers, managers, and queue docs before archive plans or binary exploration.
 3. Draw the runtime layers.
    Common layers are owner/manager, transport or generic helper, thin wrapper/serializer, dispatch/consumer, and apply sink.
 4. Choose the current `frontier`.
@@ -28,16 +35,16 @@ Use this reference first whenever the task is mainly about process, naming, evid
 7. Decide the naming action from evidence strength.
 8. Write back to canonical docs and perform a consistency check.
 
-## Evidence Levels
+## Evidence Levels And Repo Status
 
-| Level | Meaning | Naming action |
+| Level | Meaning | Repo-facing status / write-back |
 | --- | --- | --- |
-| `CODE_ALIAS` | Only project names, comments, tables, or external labels | Keep alias or `Unknown` |
-| `BINARY_ANCHOR` | One stable native anchor such as string, RTTI, vtable, owner, or field | Strengthen notes, but do not overname |
-| `FLOW_EVIDENCE` | One meaningful stage of send, receive, dispatch, apply, or production is closed | Narrow to family-level semantics |
-| `BROAD_SEMANTIC` | Functional area is stable but official name is not | Use a conservative broad name |
-| `CONFIRMED` | Owner, role, and core flow are basically closed | Use the current confirmed name |
-| `FALSE_LEAD` | Evidence shows the path is not the target | Record why it is false and stop re-chasing it |
+| `CODE_ALIAS` | Only project names, comments, tables, or external labels | Keep alias or `Unknown`; usually stays `unconfirmed` |
+| `BINARY_ANCHOR` | One stable native anchor such as string, RTTI, vtable, owner, or field | Strengthen notes, but keep repo wording conservative; usually still `unconfirmed` |
+| `FLOW_EVIDENCE` | One meaningful stage of send, receive, dispatch, apply, or production is closed | Narrow to family-level semantics; may still stay `unconfirmed` if the chain is open |
+| `BROAD_SEMANTIC` | Functional area is stable but official name is not | Use conservative broad wording; often lands as repo `corrected` or broad-family notes |
+| `CONFIRMED` | Owner, role, and core flow are basically closed | Safe to write as repo `confirmed` |
+| `FALSE_LEAD` | Evidence shows the path is not the target | Record in false leads and queue notes; stop re-chasing |
 
 ## Common Frontier Switches
 
@@ -58,6 +65,7 @@ Every canonical update should answer:
 - What is the next anchor?
 
 If ledgers, trees, or queues exist for the task, keep their `current_name`, blocker, and next anchor aligned with the deep report.
+If packet, FRPG, or runtime findings touch more than one repo surface, update them in the same pass.
 
 ## Anti-Patterns
 
@@ -66,3 +74,4 @@ If ledgers, trees, or queues exist for the task, keep their `current_name`, bloc
 - Writing "continue analysis" with no concrete next jump
 - Leaving false leads undocumented
 - Updating one canonical doc while leaving the related queue or ledger stale
+- Treating `plans/` as the current canonical source when stable docs already exist

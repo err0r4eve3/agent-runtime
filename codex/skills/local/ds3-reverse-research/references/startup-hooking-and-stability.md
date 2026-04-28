@@ -9,6 +9,17 @@ Use this reference for startup timing, hook installation order, `AfterMain`, `St
 3. Confirm whether hook ordering or anti-tamper neutralization changes allocator or startup behavior.
 4. Only then debug downstream feature code.
 
+## DS3-Tools Repo Surfaces
+
+- `docs/topics/startup-stability.md`
+- `docs/topics/steam-init-race.md`
+- `docs/topics/allocator-hook.md`
+- `docs/topics/dearxan-disabler.md`
+- `docs/topics/crash-safety.md`
+- `docs/reverse/dearxan/address_tree_dearxan.md`
+- `docs/reverse/runtime-addresses/address_tree_ds3proxy_runtime_game.md`
+- `docs/reverse/runtime-addresses/address_tree_verification_queue.md`
+
 If a startup hook missed the real call, downstream systems may look broken even though they never had a chance to initialize.
 
 ## Stable Rules
@@ -49,3 +60,4 @@ If a startup hook missed the real call, downstream systems may look broken even 
 - current timing explanation
 - direct anchor
 - next verification point
+- sync any changed topic summary, address tree, and verification-queue notes in the same pass

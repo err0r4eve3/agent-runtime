@@ -11,8 +11,9 @@ This repo is meant to do two jobs:
 
 - `codex/`: Codex runtime snapshots, notes, and generated inventories
 - `codex/AGENTS.md`: persistent Codex local instruction overlay
-- `codex/learning/`: failure-learning workflow, distilled rules, and task plans
+- `codex/agents/local/`: snapshot of Codex subagent definitions from `~/.codex/agents`
 - `codex/mcp/repos/`: tracked local MCP repositories or runtime bundles worth syncing across machines
+- `codex/skills/agents-home/`: snapshot of agent-home skills from `~/.agents/skills`
 - `codex/skills/projects/`: project-specific skill snapshots that are not part of `~/.codex/skills`
 - `codex/templates/`: reusable task templates for Codex CLI / cloud tasks
 - `cursor/`: Cursor runtime snapshots
@@ -26,7 +27,6 @@ On a machine that already has Codex:
 
 ```bash
 bash scripts/sync_codex_runtime.sh
-bash scripts/refresh_codex_learning.sh
 ```
 
 On a fresh machine you want to bring up to roughly the same runtime:
@@ -34,7 +34,6 @@ On a fresh machine you want to bring up to roughly the same runtime:
 ```bash
 bash scripts/bootstrap_codex_runtime.sh
 bash scripts/sync_codex_runtime.sh
-bash scripts/refresh_codex_learning.sh
 ```
 
 ## What is intentionally not committed
@@ -49,10 +48,7 @@ bash scripts/refresh_codex_learning.sh
 
 - `codex/` is the canonical sync target and may be overwritten when you intentionally promote a new machine snapshot.
 - `inventories/<machine>/` is now lightweight history and metadata, not the place for large primary runtime backups.
-- Codex failure learning is split on purpose:
-  sanitized shared rules live in `codex/learning/`,
-  machine-level summaries live in `inventories/<machine>/codex-learning-summary.md`,
-  and raw harvested failure records stay under gitignored `codex/learning/generated/`.
+- Codex native memories are now the long-term memory layer. This repo no longer keeps its own failure-learning or memory pipeline.
 - The repo stores reproducible metadata first; MCP repos and runtime bundles are included only when they are local, stable, and worth syncing across machines.
 
 ## Credits
@@ -65,6 +61,7 @@ bash scripts/refresh_codex_learning.sh
 ### Skills
 
 - `codex/skills/local/` is the canonical snapshot of the current machine's `~/.codex/skills`, including locally maintained process and research skills.
+- `codex/skills/agents-home/` is the canonical snapshot of the current machine's `~/.agents/skills`, including skills installed by cross-agent tooling.
 - `codex/skills/local/.system/` preserves Codex-bundled system skills; related public skill packaging and vendor snapshots are tracked alongside [openai/skills](https://github.com/openai/skills).
 - `codex/skills/vendor-imports/skills-repo/` preserves a vendor skill snapshot from [openai/skills](https://github.com/openai/skills).
 - `codex/skills/projects/ds3-tool/` is synced from [err0r4eve3/DS3-Tool](https://github.com/err0r4eve3/DS3-Tool)'s local `skills/` directory.

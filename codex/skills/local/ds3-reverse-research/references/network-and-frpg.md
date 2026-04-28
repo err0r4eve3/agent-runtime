@@ -9,6 +9,17 @@ Use this reference for packet semantics, FRPG message flow, opcode/proto mapping
 - Is the current hit a transport helper, thin wrapper, serializer/export point, typed producer, or typed consumer?
 - What exact chain still is not closed?
 
+## DS3-Tools System Of Record
+
+- `docs/reverse/network-packets/network_packets_architecture.md`
+- `docs/reverse/network-packets/by-id/packet-001-076-index.md`
+- `docs/reverse/network-packets/by-id/packet-001-076-semantic-ledger.md`
+- `docs/reverse/runtime-addresses/address_tree_ds3proxy_network_packets.md`
+- `docs/reverse/runtime-addresses/address_tree_verification_queue.md`
+- `docs/reverse/network-packets/frpgmessage_analysis.md`
+- `docs/topics/frpg-message-pipeline.md`
+- `docs/topics/frpg-proto-mapping.md`
+
 ## Stable Rules
 
 - Validator switches, length tables, and project packet classes are baseline hints, not final truth.
@@ -43,7 +54,12 @@ Use this reference for packet semantics, FRPG message flow, opcode/proto mapping
 
 - `docs/topics/frpg-message-pipeline.md` for message-chain understanding
 - `docs/topics/frpg-proto-mapping.md` for single-source opcode/proto conclusions
-- packet-specific reports under `docs/reverse/network-packets/` when the task is already deep and fact-heavy
+- `docs/reverse/network-packets/by-id/packet-001-076-semantic-ledger.md` for packet verdicts, confidence, and naming corrections
+- `docs/reverse/runtime-addresses/address_tree_ds3proxy_network_packets.md` for roots, hook points, wrappers, and dispatch paths
+- `docs/reverse/runtime-addresses/address_tree_verification_queue.md` for blockers, unresolved owners, and next anchors
+- packet-specific reports under `docs/reverse/network-packets/by-id/` when the task is already deep and fact-heavy
+
+If a packet or FRPG conclusion changes the ledger, address tree, or queue, update those repo surfaces together. Do not land only the packet-specific report.
 
 ## False Leads To Record
 

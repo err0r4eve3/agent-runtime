@@ -91,7 +91,7 @@ Interceptor.attach(Module.findExportByName("libgame.so", "function_name"), {
 #### Common Checks
 ```
 - /system/bin/su existence
-- /system/xbin/su existence  
+- /system/xbin/su existence
 - Build.TAGS contains "test-keys"
 - ro.build.selinux property
 - Magisk files/folders
@@ -113,11 +113,11 @@ class Module : public zygisk::ModuleBase {
         this->api = api;
         this->env = env;
     }
-    
+
     void preAppSpecialize(zygisk::AppSpecializeArgs *args) override {
         // Before app loads
     }
-    
+
     void postAppSpecialize(const zygisk::AppSpecializeArgs *args) override {
         // After app loads - inject here
     }
